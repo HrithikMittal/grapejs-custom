@@ -1,0 +1,171 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+button {
+  border: none;
+}
+body,
+html {
+  font-family: Inter, Helvetica, sans-serif;
+  font-weight: normal;
+  background: #fff;
+  width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: inherit;
+}
+
+body {
+  margin: 0;
+}
+.form {
+  border-radius: 3px;
+  padding: 10px 15px;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.input {
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 7px 10px;
+  border-radius: 2px;
+  color: #fff;
+  background-color: #554c57;
+  border: none;
+}
+.textarea {
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 7px 10px;
+  border-radius: 2px;
+  color: #fff;
+  background-color: #554c57;
+  border: none;
+}
+.label {
+  width: 100%;
+  display: block;
+}
+.button {
+  width: 100%;
+  margin: 15px 0;
+  background-color: #785580;
+  border: none;
+  color: #fff;
+  border-radius: 2px;
+  padding: 7px 10px;
+  font-size: 1em;
+  cursor: pointer;
+}
+.tooltip-component__body,
+[data-tooltip]::after {
+  font-family: Helvetica, sans-serif;
+  background: rgba(55, 61, 73, 0.95);
+  border-radius: 3px;
+  bottom: 100%;
+  color: #fff;
+  content: attr(data-tooltip);
+  display: block;
+  font-size: 12px;
+  left: 50%;
+  line-height: normal;
+  max-width: 32rem;
+  opacity: 0;
+  overflow: hidden;
+  padding: 8px 16px;
+  pointer-events: none;
+  position: absolute;
+  text-overflow: ellipsis;
+  transform: translate(-50%, 0);
+  transition: opacity 0.25s, transform 0.25s;
+  white-space: nowrap;
+  box-sizing: border-box;
+  z-index: 10;
+}
+[data-tooltip-visible="true"]::after,
+[data-tooltip]:focus::after,
+[data-tooltip]:hover::after {
+  opacity: 1;
+  transform: translate(-50%, -0.5rem);
+}
+[data-tooltip-pos="right"]::after {
+  bottom: 50%;
+  left: 100%;
+  transform: translate(0, 50%);
+}
+[data-tooltip-pos="right"]:focus::after,
+[data-tooltip-pos="right"]:hover::after,
+[data-tooltip-visible="true"][data-tooltip-pos="right"]::after {
+  transform: translate(0.5rem, 50%);
+}
+[data-tooltip-pos="bottom"]::after {
+  bottom: auto;
+  top: 100%;
+  transform: translate(-50%, 0);
+}
+[data-tooltip-pos="bottom"]:focus::after,
+[data-tooltip-pos="bottom"]:hover::after,
+[data-tooltip-visible="true"][data-tooltip-pos="bottom"]::after {
+  transform: translate(-50%, 0.5rem);
+}
+[data-tooltip-pos="left"]::after {
+  bottom: 50%;
+  left: auto;
+  right: 100%;
+  transform: translate(0, 50%);
+}
+[data-tooltip-pos="left"]:focus::after,
+[data-tooltip-pos="left"]:hover::after,
+[data-tooltip-visible="true"][data-tooltip-pos="left"]::after {
+  transform: translate(-0.5rem, 50%);
+}
+[data-tooltip-length="small"]::after {
+  white-space: normal;
+  width: 80px;
+}
+[data-tooltip-length="medium"]::after {
+  white-space: normal;
+  width: 150px;
+}
+[data-tooltip-length="large"]::after {
+  white-space: normal;
+  width: 300px;
+}
+[data-tooltip-length="fit"]::after {
+  white-space: normal;
+  width: 100%;
+}
+/* // IE 11 bugfix */
+button[data-tooltip] {
+  overflow: visible;
+}
+.row {
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+  flex-wrap: nowrap;
+  padding: 10px;
+}
+.cell {
+  min-height: 75px;
+  flex-grow: 1;
+  flex-basis: 100%;
+  padding: 10px;
+}
+@media (max-width: 768px) {
+  .row {
+    flex-wrap: wrap;
+  }
+}
